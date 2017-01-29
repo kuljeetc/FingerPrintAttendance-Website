@@ -1,0 +1,40 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<div class="container-fluid">
+    <div class="row"><h4></h4></div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            {% if attend_list %}
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="font-size:28px">
+                    <div class="row">
+                        <div class="col-md-4">Name: {{ user_name }}</div>
+                        <div class="col-md-4">Id: {{ user_id }}</div>                          
+                    </div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Attendance Date & Time</th>
+                    <tr>
+                    {% for attend in attend_list %}
+                    <tr>
+                        <td>{{ attend.attend_date }}</td>
+                    <tr>
+                    {% endfor %}    
+                </table>
+            </div>
+            {% else %}
+            <div class="alert alert-warning" role="alert" style="font-size:28px; text-align: center">No attendance record found for {{ user_name }} ({{ user_id }}).</div>
+            {% endif %}
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

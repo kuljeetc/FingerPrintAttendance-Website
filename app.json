@@ -1,0 +1,8 @@
+{
+  "name": "Biometric Attendance System",
+  "description": "A python app to show the attendance taken via biometric",
+  "image": "heroku/python",
+  "repository": "",
+  "keywords": ["python", "django" ],
+  "addons": [ ]
+}

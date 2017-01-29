@@ -1,0 +1,7 @@
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% elif user_id %}
+<p><strong>{{ user_id }} - {{ attend_time }}</strong></p>
+{% else %}
+Something went wrong!!!
+{% endif %}
